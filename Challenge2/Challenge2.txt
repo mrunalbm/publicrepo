@@ -1,0 +1,3 @@
+Challenge #2
+
+Programmatically list out the top 20 articles from the Hacker News homepage (https://news.ycombinator.com). The choice of language and implementation is up to you.

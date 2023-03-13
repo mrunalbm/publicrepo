@@ -1,0 +1,41 @@
+pipeline {
+    options {
+        disableConcurrentBuilds()
+        ansiColor('xterm')
+    }
+
+    agent any
+   
+    environment {
+        environment_dir = "${WORKSPACE}/terraformscripts"
+        email = false
+        }
+
+    stages {
+        stage ('Initializing') {
+            steps {
+                sh 'chmod 755 terraformscripts/cibuild_init.sh'
+                sh 'terraformscripts/cibuild_init.sh'
+                }
+            }
+        stage ('Build Image') {
+            steps {
+                sh 'chmod 755 terraformscripts/cibuild_build.sh'
+                sh 'terraformscripts/cibuild_build.sh'
+            }
+        }
+        stage ('Upload Image') {
+            steps {
+                sh 'chmod 755 terraformscripts/cibuild_uploadimage.sh'
+                sh 'terraformscripts/cibuild_uploadimage.sh'
+            }
+        }
+        stage ('Update ECS') {
+            steps {
+                sh 'chmod 755 terraformscripts/cibuild_updateECS.sh'
+                sh 'terraformscripts/cibuild_updateECS.sh'
+            }
+        }
+    }
+}
+
