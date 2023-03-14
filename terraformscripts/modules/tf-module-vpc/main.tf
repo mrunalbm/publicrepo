@@ -254,7 +254,7 @@ resource "aws_vpc_endpoint" "cw" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
@@ -287,7 +287,7 @@ resource "aws_vpc_endpoint" "ecr-dkr" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
@@ -305,7 +305,7 @@ resource "aws_vpc_endpoint" "ecr-api" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
@@ -344,7 +344,7 @@ resource "aws_vpc_endpoint" "ecs" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
@@ -362,7 +362,7 @@ resource "aws_vpc_endpoint" "ecs-agent" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
@@ -380,7 +380,7 @@ resource "aws_vpc_endpoint" "ecs-telemetry" {
   ]
 
   subnet_ids = [
-    "${aws_subnet.private[0].id}, ${aws_subnet.private[1].id}",
+    "${aws_subnet.private[0].id}", "${aws_subnet.private[1].id}",
   ]
 
   private_dns_enabled = true
