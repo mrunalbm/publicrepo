@@ -1,5 +1,11 @@
+/*
 locals {
   encoded_container_definition  = "${jsonencode(local.container_definition)}"
+}
+*/
+
+locals {
+  encoded_container_definition  = "${replace(replace(replace(jsonencode(local.container_definition), "/(\\[\\]|\\[\"\"\\]|\"\"|{})/", "null"), "/\"(true|false)\"/", "$1"), "/\"([0-9]+\\.?[0-9]*)\"/", "$1")}"
 }
 
 output "json" {
