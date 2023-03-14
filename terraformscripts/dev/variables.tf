@@ -70,6 +70,14 @@ variable "assign_generated_ipv6_cidr_block" {
   type        = string
 }
 
+variable "vpc_name" {
+  description = "Name to be used on all the resources as identifier and the VPC name"
+  type        = string
+  default     = "main"
+}
+
+
+
 #########
 # Subnets
 #########
