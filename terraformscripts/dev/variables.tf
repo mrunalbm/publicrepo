@@ -27,7 +27,7 @@ variable "region" {
 variable "ecs_image_id" {
   description = "Image to be used with ECS for Auto Scaling Group"
   type = string
-  default = "ami-0055e70f580e9ae80"
+  default = "ami-0a9d0b31a17ab6ef5"
 }
 
 variable "ecr_reposiroty_url" {
