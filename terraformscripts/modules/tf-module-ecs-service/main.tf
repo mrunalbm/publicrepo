@@ -253,7 +253,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs-service-memory-low" {
   period              = "120"
   statistic           = "Average"
   threshold           = "${var.ram_low_threshold}"
-  alarm_actions       = ["${aws_appautoscaling_policy.ecs-scale-down-memory.arn)}"]
+  alarm_actions       = ["${aws_appautoscaling_policy.ecs-scale-down-memory.arn}"]
 
   dimensions = {
     ClusterName = "${var.ecs_cluster_name}"
