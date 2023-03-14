@@ -246,7 +246,7 @@ resource "aws_vpc_endpoint" "cw" {
   count = "${var.enable_cw_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.cw.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.cw[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -279,7 +279,7 @@ resource "aws_vpc_endpoint" "ecr-dkr" {
   count = "${var.enable_ecr_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.ecr-dkr.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.ecr-dkr[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -297,7 +297,7 @@ resource "aws_vpc_endpoint" "ecr-api" {
   count = "${var.enable_ecr_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.ecr-api.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.ecr-api[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -336,7 +336,7 @@ resource "aws_vpc_endpoint" "ecs" {
   count = "${var.enable_ecs_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.ecs.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.ecs[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -354,7 +354,7 @@ resource "aws_vpc_endpoint" "ecs-agent" {
   count = "${var.enable_ecs_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.ecs-agent.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.ecs-agent[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -372,7 +372,7 @@ resource "aws_vpc_endpoint" "ecs-telemetry" {
   count = "${var.enable_ecs_endpoint ? 1 : 0}"
 
   vpc_id            = "${local.vpc_id}"
-  service_name      = "${data.aws_vpc_endpoint_service.ecs-telemetry.service_name}"
+  service_name      = "${data.aws_vpc_endpoint_service.ecs-telemetry[0].service_name}"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
