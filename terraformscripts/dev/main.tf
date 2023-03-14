@@ -47,9 +47,6 @@ module "aws-ecs-cluster" {
   vpc_id = "${module.aws-vpc.vpc_id}"
   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ1+ecGWaKo2tDRHusRnNGfFh3JGyCgG19gCAEd4o4Ln mrunalbm@gmail.com"
 
-  enable_memory_autoscaling = 1
-  enable_cpu_autoscaling    = 1
-
   container_from_port = 8080
   container_to_port   = 8080
  
