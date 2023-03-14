@@ -1,0 +1,37 @@
+Challenge #1
+
+We want you to automate the deployment of a simple web application (e.g. WordPress site) in a cloud provider of your choice. We would like to see the infrastructure choices you have provisioned to host such application using IaC of your choice and the way you automate the deployment of both your infrastructure and application. Make some notes on how you would further “Productionise” such solution.
+
+Brownie points if the application is running.
+
+
+
+
+Summary:
+	Simple Web application
+	automate deployment of application
+	automate deployment of platform
+	Application running 24x7
+	
+Plan:
+	AWS Free tier account
+	Terraform
+	GitHub
+	GitBash
+	docker
+	ECS
+	ECR
+	SG
+	ALB
+	EC2
+	Launch Config
+	
+Improvements:
+	1) Much more better security
+		Actual CIDR range.
+		expose https instead of http
+		using WAF, guardduty, etc
+		enabling audittrail and VPC flowlogs.
+	2) Application and DB use. For now I just created subnets and all. But application is not using RDS.
+	3) Better error handling
+	4) There are few hardcodings which I would like to make it as generic and dynamic as possible
