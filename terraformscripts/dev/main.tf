@@ -103,8 +103,8 @@ module "aws-ecs-service" {
 
   container_definition = "${module.aws-ecs-task-definition.json}"
 
-  enable_cpu_autoscaling    = false
-  enable_memory_autoscaling = false
+  #enable_cpu_autoscaling    = false
+  #enable_memory_autoscaling = false
 
   vpc_id         = "${module.aws-vpc.vpc_id}"
   container_name = "webapp"
