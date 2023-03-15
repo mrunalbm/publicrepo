@@ -30,6 +30,7 @@ variable "ecs_image_id" {
   default = "ami-0a9d0b31a17ab6ef5"
 }
 
+
 variable "ecr_reposiroty_url" {
   description = "Repository to use"
   type = string
