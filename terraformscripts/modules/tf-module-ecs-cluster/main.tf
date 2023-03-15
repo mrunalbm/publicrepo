@@ -172,6 +172,7 @@ resource "aws_launch_configuration" "this" {
 ######
 # ASG
 ######
+
 resource "aws_autoscaling_group" "this" {
   name                      = "ASG-${local.name}"
   launch_configuration      = "${aws_launch_configuration.this.name}"
