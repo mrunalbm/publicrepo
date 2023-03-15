@@ -209,6 +209,26 @@ resource "aws_ecs_cluster" "this" {
   name = "${local.name}-cluster"
 }
 
+resource "aws_ecs_cluster_capacity_providers" "cluscapprovider" {
+  cluster_name = aws_ecs_cluster.this.name
+
+  capacity_providers = [aws_ecs_capacity_provider.capprovider.name]
+
+  default_capacity_provider_strategy {
+    base              = 1
+    weight            = 100
+    capacity_provider = aws_ecs_capacity_provider.capprovider.name
+  }
+}
+
+resource "aws_ecs_capacity_provider" "capprovider" {
+  name = "webapp-cap-provider"
+
+  auto_scaling_group_provider {
+    auto_scaling_group_arn = aws_autoscaling_group.this.arn
+  }
+}
+
 #########################################################################################
 # A CloudWatch alarm that monitors memory reservation of the EC2 instance for scaling up
 #########################################################################################
